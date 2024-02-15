@@ -1,0 +1,313 @@
+:root {
+
+  ---bg-1: black;
+  ---bg-2: lightseagreen;
+
+
+  ---white: #fff;
+  ---black: black;
+  ---color-1: rgb(73, 81, 81);
+
+  --fluid-width: 90vh;
+  --max-width: 1170px;
+
+  --txtFont: 0.75rem;
+  ---btnSize: 1rem;
+}
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 100%;
+  background-color: var(---bg-1);
+}
+
+.logo {
+  color: var(---white);
+  font-size: var(--txtFont);
+  cursor: pointer;
+  z-index: 1;
+}
+
+
+.hero {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  background-color: gray;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.slide h1 {
+  color: var(---white);
+}
+
+.slide.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide.next {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide.prev {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.banner-logo {
+  position: absolute;
+  top: 2%;
+  left: 2.5%;
+  display: none;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(---white);
+}
+
+.hamburger {
+  z-index: 1;
+  cursor: pointer;
+}
+
+.banner-container {
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: var(---bg-2);
+  transform: translateY(-100%);
+  perspective: 1000px;
+  transition-duration: 1s;
+}
+
+.show.banner-container {
+  top: 0;
+  left: 0;
+  transform: translateY(0%);
+  transition-duration: 0.5s;
+}
+
+.show.hamburger {
+  display: none;
+}
+
+.show.close-btn {
+  display: inline;
+  transition-duration: 0.5s;
+}
+
+.banner {
+  position: relative;
+  margin-top: 10rem;
+
+}
+
+.banner-contact {
+  display: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  font-size: 3rem;
+  text-transform: capitalize;
+
+}
+
+.links li a {
+  color: var(---white);
+}
+
+.links li {
+  transition: 0.5s;
+}
+
+.link-active {
+  text-decoration: line-through;
+}
+
+.links li:hover {
+  transition: 1s;
+  letter-spacing: 5px;
+}
+
+.links li a:hover {
+  color: var(---color-1);
+}
+
+
+.close-btn {
+  color: var(---color-1);
+  cursor: pointer;
+  display: none;
+  z-index: 1;
+}
+
+.about-container {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(---bg-2);
+}
+
+.about-me {
+  width: 12rem;
+  height: 2.5rem;
+  background-color: var(---black);
+  border-color: transparent;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+
+.about-title {
+  text-align: left;
+  margin-left: 1rem;
+  line-height: 2rem;
+  color: whitesmoke;
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.project-container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  margin-top: 2rem;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects h2 {
+  text-transform: capitalize;
+  margin-left: 1rem;
+}
+
+footer {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  background-color: var(---bg-1);
+  color: var(---white);
+  padding-top: 2rem;
+}
+
+footer p {
+  text-transform: capitalize;
+}
+
+@media screen and (min-width:768px) {
+  .banner {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+
+  }
+
+  .banner-links {
+    display: flex;
+    margin-left: 10rem;
+  }
+
+  .banner-contact {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .banner-contact p {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    color: var(---white);
+    letter-spacing: 1px;
+  }
+
+  .hire-me {
+    width: 10rem;
+    height: 2rem;
+    background-color: transparent;
+    border: 2px solid black;
+    margin-top: 2rem;
+  }
+
+  .hire-me:hover {
+    background-color: var(---black);
+    cursor: pointer;
+  }
+
+  .hire-me a {
+    color: var(---white);
+    font-size: var(--txtFont);
+    letter-spacing: 1px;
+  }
+
+  .nav-header {
+    padding: 1rem 3rem 0 3rem;
+  }
+
+  .about-container {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(---bg-2);
+  }
+
+  .about-title {
+    text-align: justify;
+  }
+}
